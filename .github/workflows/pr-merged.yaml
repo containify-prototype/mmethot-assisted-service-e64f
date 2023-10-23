@@ -1,0 +1,23 @@
+# This is an example simulation of a CI workflow for a container image. 
+# No container is being build in real world - we are just trying to illustrate
+
+name: Post-Merge Checks
+
+on:
+  pull_request_target:
+    types:
+      - closed
+
+jobs:
+  post_merge:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Container Build Similation - build
+      run: echo "Container Built - PASS"
+
+    - name: Container Build Similation - integration tests
+      run: echo "Container Integration Tests - PASS"
+
+    - name: Container Build Similation - Publish
+      run: echo "Container Publish - PASS"
