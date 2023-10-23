@@ -1,0 +1,21 @@
+# This is an example simulation of a CI workflow for a container image. 
+# No container is being build in real world - we are just trying to illustrate
+
+name: Pre-Merge Checks
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  pre_merge:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Container Build Similation - build
+      run: echo "Container Built - PASS"
+
+    - name: Container Build Similation - integration tests
+      run: echo "Container Integration Tests - PASS"
